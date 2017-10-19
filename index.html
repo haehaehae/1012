@@ -1,0 +1,237 @@
+<idoctype html>
+<head>
+	<meta charset = "utf-8">
+	<link href='normalize.css' rel="stylesheet">
+	<link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<header id="header">
+	<div id="logo">SoundRoom #1</div>
+	<div id="menu">
+		<ul>
+			<li id="menuA">LP</li>
+			<li id="menuB">MV</li>
+			<li id="menuC">!</li>
+			<li id="menuD">LP</li>
+			<li id="menuE">MV</li>
+			<li id="menuF">youtube</li>
+		</ul>
+	</div>
+</header>
+
+<article>
+	<div class="section" id="sectionA">
+		<div class="player" id="player"><img src="./img/player.png"></div>
+		<div class="lp1" id="lp1"><img src="./img/shake.png"></div>
+		<h1 id="titleA">턴테이블을 돌려보세요.</h1>
+	</div>
+
+	<div class="section" id="sectionB">
+		<video autoplay id="video1"><source src="./img/video1.mp4" type="video/mp4"></video>
+	</div>
+
+	<div class="section" id="sectionC">
+		<h1 id="titleC">Yeek을 잡아보세요.</h1>
+		<div id="icon">
+			<img src="./img/icon.png">
+		</div>
+	</div>
+
+	<div class="section" id="sectionD">
+		<div class="player2" id="player2"><img src="./img/player2.png"></div>
+		<div class="lp2" id="lp2"><img src="./img/ready.png"></div>
+		<h1 id="titleD">턴테이블을 돌려보세요.</h1>
+		
+	</div>
+
+	<div class="section" id="sectionE">
+		<video autoplay id="video2"><source src="./img/video2.mp4" type="video/mp4"></video>
+	</div>
+
+	<div class="section" id="sectionF">
+		<h1 style="color:white; font-size: 1em;" >yeek ~> youtube </h1>
+		<a href="https://www.youtube.com/user/mynameisyeek"><img src="./img/icon.png" style="width: 100px; margin-left: 650px;"></a>
+		
+	</div>
+
+
+<script>
+	var state = "stop";
+		lp1.onclick = function()
+		{
+			console.log("clicked!!");
+			if(state == "stop"){
+				lp1.style.animationPlayState = "running";
+				state = "play";}
+			else{
+				lp1.style.animationPlayState = "paused";}
+		}
+
+	var state = "stop";
+		icon.onclick = function()
+		{
+			console.log("clicked!!");
+			if(state == "stop"){
+				icon.style.animationPlayState = "running";
+				state = "play";}
+			else{
+				icon.style.animationPlayState = "paused";
+				state = "stop";}
+		}
+
+		var state = "stop";
+		lp2.onclick = function()
+		{
+			console.log("clicked!!");
+			if(state == "stop"){
+				lp2.style.animationPlayState = "running";
+				state = "play";}
+			else{
+				lp2.style.animationPlayState = "paused";}
+		}
+
+
+	window.onscroll = function(){
+		console.log(document.body.scrollTop);
+		var scrollH = document.body.scrollTop;
+
+		if(scrollH > 50){
+
+			header.style.height = "44px";
+			header.style.position = "fixed";
+			header.style.top = "0px";
+			header.style.zIndex = "9999";
+			menu.style.left = "400px";
+			menu.style.top = "-70px";
+			logo.style.left = "0px";
+			sectionA.style.marginTop = "44px";
+		}else{
+			video1.play();
+			header.style.height = "300px";
+			header.style.position = "relative";
+			header.style.top = "0px";
+			logo.style.left = "calc(50% - 100px)";
+			menu.style.left = "calc(50% - 350px)";
+			menu.style.top = "80px";
+			sectionA.style.marginTop = "0px";
+
+		}
+
+		if(scrollH > 456){
+			titleA.style.paddingTop = "500px";
+			menuA.style.background = "orange";
+		}else{
+			titleA.style.paddingTop = "280px";
+			menuA.style.background = "white";
+		}
+
+		if(scrollH > 603){
+			menuB.style.background = "orange";
+		}else{
+
+			menuB.style.background = "";
+		}
+
+		if(scrollH > 1208){
+			sectionC.style.background = "yellow";
+			titleC.style.color = "black";
+			titleC.style.fontSize = "1.5em";
+			titleC.style.fontWeight = "700"
+			menuC.style.background = "orange";
+		}else{
+			
+			sectionC.style.background = "#76FF03";
+			titleC.style.fontSize = "3em";
+			titleC.style.fontWeight = "200";
+			menuC.style.background = "white";
+		}
+
+		if(scrollH > 1759){
+			video1.pause();
+			video2.play();
+			titleD.style.paddingTop = "500px";
+			titleD.style.color = "black";
+			menuD.style.background = "orange";
+		}else{
+			titleD.style.paddingTop = "280px";
+			titleD.style.color = "white";
+			menuD.style.background = "white";
+		}
+
+		if(scrollH > 2390){
+
+			titleE.style.fontSize = "1.5em";
+			titleE.style.fontWeight = "700";
+			menuE.style.background = "orange";
+		}else{
+			video2.pause();
+			titleE.style.fontSize = "3em";
+			titleE.style.fontWeight = "200";
+			menuE.style.background = "White";
+		}
+		if(scrollH > 2499){
+			menuF.style.background = "red";
+		}else{
+			menuF.style.background = "red";
+			
+		}
+
+	}
+</script>
+</body>
+<style>
+		html { font-family: 'Spoqa Han Sans'; font-weight: 200;}
+		.section{height:600px;width:100%;position: relative; background:black;}
+
+		header{height:300px; background: black;width:100%; transition: all 0.3s}
+		header #logo{width:200px;text-align: center;height:44px;line-height: 44px;font-size: 1.2em;font-weight: 500;position:relative;left:calc(50% - 100px);transition: all 0.3s;color:white}
+		header #menu{width:900px;height:100px;position:relative;left:calc(50% - 350px);top:80px;transition: all 0.3s}
+
+		header li{width:80px;height:80px;color:black;background: white;float:left;border-radius: 50px;text-align: center;line-height: 80px;color:black;font-size: 1em;margin-left: 20px;margin-right:20px;}
+
+		h1{color:white;font-size: 3em;text-align: center;padding-top:280px; line-height: 1.2;padding-left: 100px;padding-right: 100px;letter-spacing: -1px;}
+
+		article{width:900px;}
+		video{width:100%;}
+		#sectionA{ font-size: 0.5em; background: blue; transition: all 1s; }
+			#lp1{margin-top: 70px; margin-left:calc(50% - 200px); position:absolute; 
+			animation:lp1Move 5s infinite linear paused;}
+			@keyframes lp1Move{
+			0%{ top:0px; left:0px; transform: rotateZ(0deg)}
+			100%{ top:0px; left:0px; transform: rotateZ(1018deg);}
+			}
+			#player{ width:50%; left:calc(50% - 270px); position: absolute;}
+
+		#sectionB{ background: black; transition: all 1s; }
+
+		#sectionC{ background: #76FF03;}
+			#icon{width:100px;height:100px;
+			position:relative;
+			animation:iconMove 5s infinite linear;	}
+			@keyframes iconMove{
+			0%{ top:0px; left:300px; transform: rotateZ(0deg)}
+			25%{ top:0px; left:600px; }
+			50%{ top:400px; left:900px;}
+			75%{ top:100px; left:1000px; }
+			100%{ top:500px; left:300px; transform: rotateZ(2000deg);}
+		}
+		#sectionD{  font-size: 0.5em; background: pink; transition: all 1s; }
+		#lp2{margin-top: 70px; margin-left:calc(50% - 200px); position:absolute; 
+			animation:lp2Move 5s infinite linear paused;}
+			@keyframes lp2Move{
+			0%{ top:0px; left:0px; transform: rotateZ(0deg)}
+			100%{ top:0px; left:0px; transform: rotateZ(1018deg);}
+			}
+			#player2{ width:50%; left:calc(50% - 270px); position: absolute;}
+
+
+		#sectionE{ background: purple; transition: all 1s; }
+
+		#titleA{transition: all 1s;}
+		#titleB{transition: all 1s;}
+		#titleC{transition: all 1s;}
+		#titleD{transition: all 1s;}
+		#titleE{transition: all 1s;}
+		#titleF{transition: all 1s;}
+	</style>
