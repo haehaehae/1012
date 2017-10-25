@@ -112,7 +112,6 @@
 		var scrollH = document.body.scrollTop;
 
 		if(scrollH > 58){
-
 			header.style.height = "44px";
 			header.style.position = "fixed";
 			header.style.top = "0px";
@@ -134,6 +133,7 @@
 		}
 
 		if(scrollH > 59){
+
 			titleA.style.paddingTop = "500px";
 			menuA.style.background = "orange";
 		}else{
@@ -149,7 +149,7 @@
 		}
 
 		if(scrollH > 1208){
-			video2.play();
+
 			sectionC.style.background = "yellow";
 			titleC.style.color = "black";
 			titleC.style.fontSize = "1.5em";
@@ -165,11 +165,13 @@
 
 		if(scrollH > 1759){
 			video1.pause();
-			
+			video2.play();
 			titleD.style.paddingTop = "500px";
 			titleD.style.color = "black";
 			menuD.style.background = "orange";
+
 		}else{
+			video2.pause();
 			titleD.style.paddingTop = "280px";
 			titleD.style.color = "white";
 			menuD.style.background = "white";
@@ -184,7 +186,6 @@
 		if(scrollH > 2548){
 			menuF.style.background = "red";
 		}else{
-			video2.pause();
 			menuF.style.background = "red";
 			
 		}
