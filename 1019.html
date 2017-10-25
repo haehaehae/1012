@@ -96,7 +96,7 @@
 		console.log(document.body.scrollTop);
 		var scrollH = document.body.scrollTop;
 
-		if(scrollH > 50){
+		if(scrollH > 48){
 
 			header.style.height = "44px";
 			header.style.position = "fixed";
@@ -140,7 +140,7 @@
 			titleC.style.fontWeight = "700"
 			menuC.style.background = "orange";
 		}else{
-			video2.play();
+			
 			sectionC.style.background = "#76FF03";
 			titleC.style.fontSize = "3em";
 			titleC.style.fontWeight = "200";
@@ -148,6 +148,7 @@
 		}
 
 		if(scrollH > 1759){
+			video2.play();
 			video1.pause();
 			
 			titleD.style.paddingTop = "500px";
